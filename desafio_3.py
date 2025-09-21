@@ -13,7 +13,7 @@ def contar_buracos(texto):
     buracos = {
         'A': 1, 'D': 1, 'O': 1, 'P': 1, 'Q': 1, 'R': 1,
         'a': 1, 'd': 1, 'o': 1, 'p': 1, 'q': 1, 'e': 1, 'g': 1,
-        'B': 2, 'b': 2
+        'B': 2, 'b': 1
     }
     texto = remover_acentos(texto)
     return sum(buracos.get(char, 0) for char in texto)

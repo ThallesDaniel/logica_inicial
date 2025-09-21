@@ -13,15 +13,11 @@ def remover_acentos(txt: str) -> str:
     )
 
 def contar_buracos(texto: str) -> int:
-    """
-    Conta o número de buracos nas letras de um texto.
-    Letras com 1 buraco: A, D, O, P, Q, R, a, d, o, p, q, e, g
-    Letras com 2 buracos: B, b
-    """
+
     buracos = {
         'A': 1, 'D': 1, 'O': 1, 'P': 1, 'Q': 1, 'R': 1,
         'a': 1, 'd': 1, 'o': 1, 'p': 1, 'q': 1, 'e': 1, 'g': 1,
-        'B': 2, 'b': 2
+        'B': 2, 'b': 1
     }
     
     texto = remover_acentos(texto)
