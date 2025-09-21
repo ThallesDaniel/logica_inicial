@@ -1,7 +1,6 @@
 import tkinter as tk
 import unicodedata
 
-# Função para remover acentos
 def remover_acentos(txt: str) -> str:
     return ''.join(
         c for c in unicodedata.normalize('NFD', txt)
@@ -15,15 +14,13 @@ def contar_buracos(texto: str) -> int:
         'a': 1, 'd': 1, 'o': 1, 'p': 1, 'q': 1, 'e': 1, 'g': 1,
         'B': 2, 'b': 2
     }
-    texto = remover_acentos(texto)  # normaliza antes de contar
+    texto = remover_acentos(texto)  
     return sum(buracos.get(letra, 0) for letra in texto)
 
-# Atualiza o contador a cada tecla digitada
 def atualizar_contagem(event=None):
     texto = entrada.get()
     resultado.set(f"Buracos: {contar_buracos(texto)}")
 
-# Interface Tkinter
 root = tk.Tk()
 root.title("Contador de Buracos")
 
